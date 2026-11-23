@@ -160,6 +160,7 @@ ES.update({
     'shop.f1': 'Corte unisex · de la S a la XXL', 'shop.f2': 'Impresas en Europa', 'shop.f3': '¿Te alojas en Mali o Dudi? Pregunta por la tuya al llegar',
     'shop.cta_t': '¿Quieres <em>una?</em>', 'shop.cta': 'Los precios llegarán pronto. Escríbenos con el número del diseño y tu talla y te avisamos.',
     'shop.mail': 'Escríbenos', 'shop.ask': 'Preguntar por esta camiseta', 'shop.dm': 'Mensaje por Instagram',
+    'shop.see': 'Ver la colección', 'shop.look_k': 'Lookbook', 'shop.look_t': 'Desliza la <em>colección</em>', 'shop.drag': 'Psst… arrastra las pegatinas',
 })
 SHOP = {
   "en": {"title": "Lajares Tee Club · Surf T-shirts from Lajares, Fuerteventura · Lajares Houses",

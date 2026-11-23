@@ -2,7 +2,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300A8B5'/%3E%3Cpath d='M14 44 L28 22 L36 34 L42 26 L52 44 Z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&family=Anton&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{root}}assets/style.css">
 <link rel="stylesheet" href="{{root}}assets/shop.css">
 </head>
@@ -10,33 +10,43 @@
 
 {{header}}
 <main id="top">
-  <section class="s-hero">
-    <div class="wrap s-hero__grid">
-      <div>
+  <!-- HERO: moving LAJARES rows + shuffling deck of tees -->
+  <section class="sx-hero" id="sxHero">
+    <div class="sx-rows" id="rows" aria-hidden="true"></div>
+    <div class="sx-grain" aria-hidden="true"></div>
+    <div class="wrap sx-hero__grid">
+      <div class="sx-hero__copy">
         <p class="kicker" data-i18n="shop.kicker">Lajares Houses · Drop 01</p>
-        <h1 class="s-hero__title"><span class="line"><span data-i18n="shop.t1">The Lajares</span></span><span class="line"><span><em>Tee Club</em></span></span></h1>
-        <p class="s-hero__lead rv" data-i18n="shop.lead">Our first collection is being printed. Ten designs from the north shore of Fuerteventura: surf, volcanoes and the island goat. No prices yet. Tell us which one you like and we'll save one in your size.</p>
-        <span class="soon rv"><i></i><span data-i18n="shop.soon">Coming soon</span></span>
+        <h1 class="sx-title"><span class="line"><span data-i18n="shop.t1">The Lajares</span></span><span class="line"><span><em>Tee Club</em></span></span></h1>
+        <p class="sx-lead rv" data-i18n="shop.lead">Our first collection is being printed. Ten designs from the north shore of Fuerteventura: surf, volcanoes and the island goat. No prices yet. Tell us which one you like and we'll save one in your size.</p>
+        <div class="sx-hero__btns rv">
+          <a href="#collection" class="btn btn--teal"><span data-i18n="shop.see">See the drop</span> <span class="arrow"></span></a>
+          <span class="soon"><i></i><span data-i18n="shop.soon">Coming soon</span></span>
+        </div>
       </div>
-      <div class="s-hero__stage rv" aria-hidden="true">
-        <div class="s-hero__disc"></div>
-        <svg class="s-hero__ring" viewBox="0 0 500 500">
-          <defs><path id="ring" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0"/></defs>
-          <text><textPath href="#ring">Lajares · Fuerteventura · North Shore · Drop 01 · @lajareshouses · </textPath></text>
+      <div class="sx-stage rv" id="stage" aria-hidden="true">
+        <div class="sx-deck" id="deck"></div>
+        <svg class="sx-badge" viewBox="0 0 200 200">
+          <defs><path id="bp" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+          <circle cx="100" cy="100" r="96"/>
+          <text><textPath href="#bp">Drop 01 · Coming soon · Drop 01 · Coming soon · </textPath></text>
+          <path class="sx-badge__mark" d="M74 118 L94 86 L105 102 L114 90 L128 118 Z"/>
         </svg>
-        <div class="s-hero__tee" id="heroTee"></div>
       </div>
     </div>
+    <a class="hero__scroll" href="#collection" aria-label="Scroll"><span></span></a>
   </section>
 
-  <div class="strip" aria-hidden="true"><div class="strip__track" id="strip"></div></div>
+  <!-- MARQUEE that leans with scroll speed -->
+  <div class="sx-marq" aria-hidden="true"><div class="sx-marq__track" id="marq"></div></div>
 
+  <!-- COLLECTION -->
   <section class="coll" id="collection">
     <div class="wrap">
       <header class="sec-head sec-head--row">
         <div>
           <p class="kicker rv" data-i18n="shop.coll_k">The collection</p>
-          <h2 class="h2 rv" data-i18n="shop.coll_t">Ten tees, <em>one island.</em></h2>
+          <h2 class="h2" data-i18n="shop.coll_t">Ten tees, <em>one island.</em></h2>
         </div>
         <div class="chips rv" id="chips" role="group" aria-label="Colour"></div>
       </header>
@@ -44,16 +54,30 @@
     </div>
   </section>
 
+  <!-- LOOKBOOK: vertical scroll moves the tees sideways -->
+  <section class="look" id="look">
+    <div class="look__pin">
+      <div class="sx-grain" aria-hidden="true"></div>
+      <header class="look__head wrap">
+        <p class="kicker" data-i18n="shop.look_k">Lookbook</p>
+        <p class="look__title" data-i18n="shop.look_t">Scroll the <em>drop</em></p>
+      </header>
+      <div class="look__track" id="lookTrack"></div>
+      <div class="look__foot wrap"><span id="lookCount">01 / 10</span><span class="look__bar"><i id="lookBar"></i></span></div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
   <section class="how">
     <div class="wrap">
       <header class="sec-head">
         <p class="kicker rv" data-i18n="shop.how_k">How it works</p>
-        <h2 class="h2 rv" data-i18n="shop.how_t">No checkout. <em>Just ask.</em></h2>
+        <h2 class="h2" data-i18n="shop.how_t">No checkout. <em>Just ask.</em></h2>
       </header>
       <div class="how__grid">
-        <div class="rv"><div class="how__n">01</div><h3 class="how__t" data-i18n="shop.s1t">Pick your favourite</h3><p data-i18n="shop.s1">Hover over a tee to see the front, and tap it to see more.</p></div>
-        <div class="rv"><div class="how__n">02</div><h3 class="how__t" data-i18n="shop.s2t">Send us a message</h3><p data-i18n="shop.s2">Tell us the design and your size by email or Instagram DM.</p></div>
-        <div class="rv"><div class="how__n">03</div><h3 class="how__t" data-i18n="shop.s3t">We save one for you</h3><p data-i18n="shop.s3">When the drop is ready we send you the price and how to get it, posted to you or waiting at the house.</p></div>
+        <div class="how__step rv"><div class="how__n">01</div><h3 class="how__t" data-i18n="shop.s1t">Pick your favourite</h3><p data-i18n="shop.s1">Hover over a tee to see the front, and tap it to see more.</p></div>
+        <div class="how__step rv"><div class="how__n">02</div><h3 class="how__t" data-i18n="shop.s2t">Send us a message</h3><p data-i18n="shop.s2">Tell us the design and your size by email or Instagram DM.</p></div>
+        <div class="how__step rv"><div class="how__n">03</div><h3 class="how__t" data-i18n="shop.s3t">We save one for you</h3><p data-i18n="shop.s3">When the drop is ready we send you the price and how to get it, posted to you or waiting at the house.</p></div>
       </div>
       <div class="facts rv">
         <span data-i18n="shop.f1">Unisex fit · S to XXL</span><span data-i18n="shop.f2">Printed in Europe</span><span data-i18n="shop.f3">Staying at Mali or Dudi? Ask about yours at check-in</span>
@@ -61,11 +85,15 @@
     </div>
   </section>
 
-  <section class="s-cta" id="ask">
-    <div class="wrap">
-      <h2 class="s-cta__title rv" data-i18n="shop.cta_t">Want <em>one?</em></h2>
-      <p class="rv" data-i18n="shop.cta">Prices are coming soon. Message us with the design number and your size and we'll keep you posted.</p>
-      <div class="s-cta__btns rv">
+  <!-- CTA with draggable stickers -->
+  <section class="sx-cta" id="ask">
+    <div class="sx-grain" aria-hidden="true"></div>
+    <div class="stickers" id="stickers" aria-hidden="true"></div>
+    <div class="wrap sx-cta__inner">
+      <p class="sx-cta__hint" data-i18n="shop.drag">Psst… drag the stickers</p>
+      <h2 class="sx-cta__title rv" data-i18n="shop.cta_t">Want <em>one?</em></h2>
+      <p class="sx-cta__p rv" data-i18n="shop.cta">Prices are coming soon. Message us with the design number and your size and we'll keep you posted.</p>
+      <div class="sx-cta__btns rv">
         <a class="btn btn--teal" href="mailto:lajaresvillarental@gmail.com?subject=Lajares%20Tee%20Club"><span data-i18n="shop.mail">Email us</span> <span class="arrow"></span></a>
         <a class="btn btn--line" href="https://www.instagram.com/lajareshouses/" target="_blank" rel="noopener">DM @lajareshouses</a>
       </div>
