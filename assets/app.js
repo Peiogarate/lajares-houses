@@ -7,7 +7,7 @@
   const locale = lang === 'es' ? 'es-ES' : 'en-GB';
 
   const CONTACT_EMAIL = 'lajaresvillarental@gmail.com';
-  const INSTAGRAM = 'lajaresrental';
+  const INSTAGRAM = 'lajareshouses';
   const HOUSES = {
     mali: { name: 'Mali House', max: 4 },
     dudi: { name: 'Dudi House', max: 6 },

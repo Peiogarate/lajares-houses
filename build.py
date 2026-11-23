@@ -17,7 +17,7 @@ SITE_URL = "https://lajareshouses.com"
 
 PHONE = "+34644871336"
 EMAIL = "lajaresvillarental@gmail.com"
-INSTAGRAM = "https://www.instagram.com/lajaresrental/"
+INSTAGRAM = "https://www.instagram.com/lajareshouses/"
 ADDRESS = {"@type": "PostalAddress", "streetAddress": "Calle la Costilla", "addressLocality": "Lajares",
            "addressRegion": "Las Palmas", "postalCode": "35650", "addressCountry": "ES"}
 
@@ -148,6 +148,25 @@ SPEC = {"en": ("guests", "bedrooms", "bedroom", "bathrooms", "bathroom", "heated
 from content import (RATINGS, HOST, COLLAGE, PRICES, LICENSES, CHECKIN, CHECKOUT, COORDS, MAPS_LINK, MAP_EMBED, LOGO, icon,
                      AMENITIES, REVIEWS, ES_EXTRA, INFO, LOC, GUIDE)
 ES.update(ES_EXTRA)
+ES.update({
+    'nav.shop': 'Tienda', 'foot.shop': 'Tee Club',
+    'shop.kicker': 'Lajares Houses · Drop 01', 'shop.t1': 'El Lajares',
+    'shop.lead': 'Estamos imprimiendo nuestra primera colección. Diez diseños del norte de Fuerteventura: surf, volcanes y la cabra majorera. Todavía no hay precios. Dinos cuál te gusta y te guardamos una en tu talla.',
+    'shop.soon': 'Muy pronto', 'shop.coll_k': 'La colección', 'shop.coll_t': 'Diez camisetas, <em>una isla.</em>',
+    'shop.how_k': 'Cómo funciona', 'shop.how_t': 'Sin carrito. <em>Solo pregunta.</em>',
+    'shop.s1t': 'Elige tu favorita', 'shop.s1': 'Pasa el ratón por una camiseta para ver la parte de delante, y tócala para ver más.',
+    'shop.s2t': 'Escríbenos', 'shop.s2': 'Dinos el diseño y tu talla por email o por mensaje en Instagram.',
+    'shop.s3t': 'Te guardamos una', 'shop.s3': 'Cuando la colección esté lista te mandamos el precio y cómo conseguirla: por correo o esperándote en la casa.',
+    'shop.f1': 'Corte unisex · de la S a la XXL', 'shop.f2': 'Impresas en Europa', 'shop.f3': '¿Te alojas en Mali o Dudi? Pregunta por la tuya al llegar',
+    'shop.cta_t': '¿Quieres <em>una?</em>', 'shop.cta': 'Los precios llegarán pronto. Escríbenos con el número del diseño y tu talla y te avisamos.',
+    'shop.mail': 'Escríbenos', 'shop.ask': 'Preguntar por esta camiseta', 'shop.dm': 'Mensaje por Instagram',
+})
+SHOP = {
+  "en": {"title": "Lajares Tee Club · Surf T-shirts from Lajares, Fuerteventura · Lajares Houses",
+         "desc": "The first Lajares Houses T-shirt collection: ten surf designs from Lajares and the north shore of Fuerteventura. Coming soon, ask us about yours."},
+  "es": {"title": "Lajares Tee Club · Camisetas de surf de Lajares, Fuerteventura · Lajares Houses",
+         "desc": "La primera colección de camisetas de Lajares Houses: diez diseños surferos de Lajares y el norte de Fuerteventura. Muy pronto, pregúntanos por la tuya."},
+}
 
 def url(lang, page):
     page = "" if page == "index.html" else page
@@ -413,9 +432,23 @@ def build_guide(lang):
                 g_get_k=g["get_k"], g_get_t=g["get_t"], g_get=get, g_stay_k=g["stay_k"], g_stay_t=g["stay_t"], g_houses=houses)
     write(lang, page, fill((TPL / "guide.html").read_text(encoding="utf-8"), vals, lang))
 
+def build_shop(lang):
+    page = "shop.html"; t = SHOP[lang]
+    ld = {"@context": "https://schema.org", "@graph": [
+        business(),
+        {"@type": "CollectionPage", "name": "Lajares Tee Club", "description": t["desc"], "inLanguage": lang, "url": url(lang, page),
+         "image": SITE_URL + "/img/shop/tee-10-back.jpg", "isPartOf": {"@id": SITE_URL + "/#site"}},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Lajares Houses", "item": url(lang, "index.html")},
+            {"@type": "ListItem", "position": 2, "name": "Lajares Tee Club", "item": url(lang, page)}]},
+    ]}
+    vals = common(lang, page)
+    vals.update(head=head(lang, page, t["title"], t["desc"], "img/shop/tee-10-back.jpg", ld), avail_attr="")
+    write(lang, page, fill((TPL / "shop.html").read_text(encoding="utf-8"), vals, lang))
+
 def build_seo_files():
     today = date.today().isoformat()
-    pages = ["index.html"] + [h["page"] for h in HOUSES.values()] + ["lajares-guide.html"]
+    pages = ["index.html"] + [h["page"] for h in HOUSES.values()] + ["lajares-guide.html", "shop.html"]
     rows = []
     for p in pages:
         for lang in ("en", "es"):
@@ -439,6 +472,7 @@ if __name__ == "__main__":
         for key in HOUSES:
             build_house(key, lang)
         build_guide(lang)
+        build_shop(lang)
     base = "/" + SITE_URL.split("://", 1)[1].partition("/")[2].strip("/")
     base = base.rstrip("/") + "/"
     (ROOT / "404.html").write_text((TPL / "404.html").read_text(encoding="utf-8").replace("{{logo}}", LOGO).replace("{{base}}", base), encoding="utf-8")

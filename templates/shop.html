@@ -1,0 +1,104 @@
+{{head}}
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300A8B5'/%3E%3Cpath d='M14 44 L28 22 L36 34 L42 26 L52 44 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{root}}assets/style.css">
+<link rel="stylesheet" href="{{root}}assets/shop.css">
+</head>
+<body class="is-loading page-shop">
+
+{{header}}
+<main id="top">
+  <section class="s-hero">
+    <div class="wrap s-hero__grid">
+      <div>
+        <p class="kicker" data-i18n="shop.kicker">Lajares Houses · Drop 01</p>
+        <h1 class="s-hero__title"><span class="line"><span data-i18n="shop.t1">The Lajares</span></span><span class="line"><span><em>Tee Club</em></span></span></h1>
+        <p class="s-hero__lead rv" data-i18n="shop.lead">Our first collection is being printed. Ten designs from the north shore of Fuerteventura: surf, volcanoes and the island goat. No prices yet. Tell us which one you like and we'll save one in your size.</p>
+        <span class="soon rv"><i></i><span data-i18n="shop.soon">Coming soon</span></span>
+      </div>
+      <div class="s-hero__stage rv" aria-hidden="true">
+        <div class="s-hero__disc"></div>
+        <svg class="s-hero__ring" viewBox="0 0 500 500">
+          <defs><path id="ring" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0"/></defs>
+          <text><textPath href="#ring">Lajares · Fuerteventura · North Shore · Drop 01 · @lajareshouses · </textPath></text>
+        </svg>
+        <div class="s-hero__tee" id="heroTee"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"><div class="strip__track" id="strip"></div></div>
+
+  <section class="coll" id="collection">
+    <div class="wrap">
+      <header class="sec-head sec-head--row">
+        <div>
+          <p class="kicker rv" data-i18n="shop.coll_k">The collection</p>
+          <h2 class="h2 rv" data-i18n="shop.coll_t">Ten tees, <em>one island.</em></h2>
+        </div>
+        <div class="chips rv" id="chips" role="group" aria-label="Colour"></div>
+      </header>
+      <div class="tees" id="teeGrid"></div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker rv" data-i18n="shop.how_k">How it works</p>
+        <h2 class="h2 rv" data-i18n="shop.how_t">No checkout. <em>Just ask.</em></h2>
+      </header>
+      <div class="how__grid">
+        <div class="rv"><div class="how__n">01</div><h3 class="how__t" data-i18n="shop.s1t">Pick your favourite</h3><p data-i18n="shop.s1">Hover over a tee to see the front, and tap it to see more.</p></div>
+        <div class="rv"><div class="how__n">02</div><h3 class="how__t" data-i18n="shop.s2t">Send us a message</h3><p data-i18n="shop.s2">Tell us the design and your size by email or Instagram DM.</p></div>
+        <div class="rv"><div class="how__n">03</div><h3 class="how__t" data-i18n="shop.s3t">We save one for you</h3><p data-i18n="shop.s3">When the drop is ready we send you the price and how to get it, posted to you or waiting at the house.</p></div>
+      </div>
+      <div class="facts rv">
+        <span data-i18n="shop.f1">Unisex fit · S to XXL</span><span data-i18n="shop.f2">Printed in Europe</span><span data-i18n="shop.f3">Staying at Mali or Dudi? Ask about yours at check-in</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-cta" id="ask">
+    <div class="wrap">
+      <h2 class="s-cta__title rv" data-i18n="shop.cta_t">Want <em>one?</em></h2>
+      <p class="rv" data-i18n="shop.cta">Prices are coming soon. Message us with the design number and your size and we'll keep you posted.</p>
+      <div class="s-cta__btns rv">
+        <a class="btn btn--teal" href="mailto:lajaresvillarental@gmail.com?subject=Lajares%20Tee%20Club"><span data-i18n="shop.mail">Email us</span> <span class="arrow"></span></a>
+        <a class="btn btn--line" href="https://www.instagram.com/lajareshouses/" target="_blank" rel="noopener">DM @lajareshouses</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{footer}}
+
+<div class="tmodal" id="tmodal" aria-hidden="true">
+  <div class="tmodal__box" role="dialog" aria-modal="true" aria-labelledby="mName">
+    <div class="tmodal__img">
+      <img id="mBack" alt=""><img id="mFront" alt="" style="opacity:0">
+      <div class="tmodal__sides"><button type="button" class="is-on" data-side="back"></button><button type="button" data-side="front"></button></div>
+    </div>
+    <div class="tmodal__body">
+      <button type="button" class="tmodal__close" aria-label="Close">×</button>
+      <p class="kicker" id="mNum" style="margin:0"></p>
+      <h3 class="tmodal__name" id="mName"></h3>
+      <p class="tmodal__desc" id="mDesc"></p>
+      <div class="tmodal__row"><span id="mColL"></span><b id="mCol"></b></div>
+      <div class="tmodal__row"><span id="mFrontL"></span><b id="mFrontV"></b></div>
+      <div class="tmodal__row"><span id="mPriceL"></span><b id="mPriceV"></b></div>
+      <div class="tmodal__btns">
+        <a class="btn btn--teal btn--full" id="mMail" href="#"><span data-i18n="shop.ask">Ask about this tee</span> <span class="arrow"></span></a>
+        <a class="btn btn--ghost btn--full" href="https://www.instagram.com/lajareshouses/" target="_blank" rel="noopener" data-i18n="shop.dm">DM on Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{root}}assets/shop.js"></script>
+<script src="{{root}}data/availability.js"></script>
+<script src="{{root}}assets/app.js"></script>
+</body>
+</html>
