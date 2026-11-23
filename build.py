@@ -13,7 +13,7 @@ from datetime import date
 from pathlib import Path
 
 # >>> Cambia esto por el dominio definitivo cuando la web este publicada <<<
-SITE_URL = "https://www.lajareshouses.com"
+SITE_URL = "https://peiogarate.github.io/lajares-houses"  # provisional: cambiar a "https://lajareshouses.com" al conectar el dominio
 
 PHONE = "+34644871336"
 EMAIL = "lajaresvillarental@gmail.com"
@@ -439,7 +439,9 @@ if __name__ == "__main__":
         for key in HOUSES:
             build_house(key, lang)
         build_guide(lang)
-    (ROOT / "404.html").write_text((TPL / "404.html").read_text(encoding="utf-8").replace("{{logo}}", LOGO), encoding="utf-8")
+    base = "/" + SITE_URL.split("://", 1)[1].partition("/")[2].strip("/")
+    base = base.rstrip("/") + "/"
+    (ROOT / "404.html").write_text((TPL / "404.html").read_text(encoding="utf-8").replace("{{logo}}", LOGO).replace("{{base}}", base), encoding="utf-8")
     print("   404.html")
     build_seo_files()
     print("Listo.")
