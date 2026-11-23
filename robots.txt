@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /templates/
 
-Sitemap: https://peiogarate.github.io/lajares-houses/sitemap.xml
+Sitemap: https://lajareshouses.com/sitemap.xml

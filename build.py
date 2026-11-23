@@ -13,7 +13,7 @@ from datetime import date
 from pathlib import Path
 
 # >>> Cambia esto por el dominio definitivo cuando la web este publicada <<<
-SITE_URL = "https://peiogarate.github.io/lajares-houses"  # provisional: cambiar a "https://lajareshouses.com" al conectar el dominio
+SITE_URL = "https://lajareshouses.com"
 
 PHONE = "+34644871336"
 EMAIL = "lajaresvillarental@gmail.com"
