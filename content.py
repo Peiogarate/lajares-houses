@@ -3,7 +3,7 @@ precios, numeros de licencia, horarios, resenas, servicios y la guia de Lajares.
 
 # ------------------------------------------------------------ datos que faltan
 # Precio "desde" por noche (en euros). Deja None para no mostrar precio.
-PRICES = {"mali": 220, "dudi": None}
+PRICES = {"mali": 220, "dudi": 220}
 # Numero de registro de vivienda vacacional (Canarias), p. ej. "VV-35-2-0001234".
 # Es obligatorio mostrarlo en la publicidad de la vivienda. Deja "" mientras no lo tengas.
 LICENSES = {"mali": "", "dudi": ""}
