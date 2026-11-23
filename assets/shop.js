@@ -12,12 +12,12 @@
 
   const T = es ? {
     all: 'Todas', back: 'Espalda', front: 'Delante', price: 'Precio a consultar', design: 'Diseño',
-    colour: 'Color', frontRow: 'Delante', frontVal: 'Logo pequeño de Lajares Houses', priceRow: 'Precio', onReq: 'A consultar',
+    colour: 'Color', frontRow: 'Delante', frontVal: 'Mali House y Dudi House, en pequeño', priceRow: 'Precio', onReq: 'A consultar',
     marq: ['No se viene, se vuelve', 'Drop 01', 'Hecho en Lajares', 'North shore', 'Muy pronto'],
     body: (n, name) => `¡Hola! Me interesa la camiseta ${n} (${name}). Mi talla es: `
   } : {
     all: 'All', back: 'Back', front: 'Front', price: 'Price on request', design: 'Design',
-    colour: 'Colour', frontRow: 'Front', frontVal: 'Small Lajares Houses logo', priceRow: 'Price', onReq: 'On request',
+    colour: 'Colour', frontRow: 'Front', frontVal: 'Small Mali House & Dudi House print', priceRow: 'Price', onReq: 'On request',
     marq: ['No se viene, se vuelve', 'Drop 01', 'Made in Lajares', 'North shore', 'Coming soon'],
     body: (n, name) => `Hi! I'd like the tee ${n} (${name}). My size is: `
   };
