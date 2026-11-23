@@ -1,0 +1,65 @@
+{{head}}
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300A8B5'/%3E%3Cpath d='M14 44 L28 22 L36 34 L42 26 L52 44 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{root}}assets/style.css">
+</head>
+<body class="is-loading page-guide">
+
+{{header}}
+<main id="top">
+  <section class="hero hero--house">
+    <div class="hero__slides" aria-hidden="true">
+      <div class="hero__slide is-active" style="background-image:url({{root}}img/island/island-01.jpg)"></div>
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__content">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{home}}">Lajares Houses</a><span>/</span><span>{{g_crumb}}</span></nav>
+      <p class="hero__title"><span class="line"><span>{{g_big}}</span></span></p>
+      <h1 class="hero__lead hero__lead--h1">{{g_h1}}</h1>
+    </div>
+    <a class="hero__scroll" href="#guide" aria-label="Scroll"><span></span></a>
+  </section>
+
+  <section class="guide" id="guide">
+    <div class="wrap wrap--narrow">
+      <p class="statement statement--sm rv">{{g_intro}}</p>
+    </div>
+    <div class="wrap">
+      <div class="guide__list">
+{{g_items}}
+      </div>
+    </div>
+  </section>
+
+  <section class="getting">
+    <div class="wrap wrap--narrow">
+      <header class="sec-head">
+        <p class="kicker rv">{{g_get_k}}</p>
+        <h2 class="h2 rv">{{g_get_t}}</h2>
+      </header>
+      <dl class="info__list rv">{{g_get}}</dl>
+    </div>
+  </section>
+
+  <section class="others">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker rv">{{g_stay_k}}</p>
+        <h2 class="h2 rv">{{g_stay_t}}</h2>
+      </header>
+      <div class="others__grid">
+{{g_houses}}
+      </div>
+    </div>
+  </section>
+
+  {{contact}}
+</main>
+
+{{footer}}
+<script src="{{root}}data/availability.js"></script>
+<script src="{{root}}assets/app.js"></script>
+</body>
+</html>

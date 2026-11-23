@@ -1,0 +1,52 @@
+<!-- AVAILABILITY -->
+  <section class="avail" id="availability"{{avail_attr}}>
+    <div class="wrap">
+      <header class="sec-head sec-head--row">
+        <div>
+          <p class="kicker rv" data-i18n="avail.kicker">Live availability</p>
+          <h2 class="h2 rv" data-i18n="avail.title">Choose your <em>dates</em></h2>
+        </div>
+        <div class="tabs rv" role="tablist" id="calTabs">
+          <button role="tab" data-h="mali" class="is-active">Mali House</button>
+          <button role="tab" data-h="dudi">Dudi House</button>
+        </div>
+      </header>
+
+      <div class="booking rv">
+        <div class="cal">
+          <div class="cal__top">
+            <button class="cal__nav" id="calPrev" type="button" aria-label="Previous month">‹</button>
+            <p class="cal__sync" id="calSync"></p>
+            <button class="cal__nav" id="calNext" type="button" aria-label="Next month">›</button>
+          </div>
+          <div class="cal__months" id="calMonths"></div>
+          <div class="cal__legend">
+            <span><i class="lg lg--free"></i><span data-i18n="legend.free">Available</span></span>
+            <span><i class="lg lg--busy"></i><span data-i18n="legend.busy">Booked</span></span>
+            <span><i class="lg lg--sel"></i><span data-i18n="legend.sel">Your stay</span></span>
+          </div>
+          <p class="cal__note" id="calNote"></p>
+        </div>
+
+        <form class="req" id="req" novalidate>
+          <h3 class="req__house" id="reqHouse">Mali House</h3>
+          <div class="req__dates">
+            <div><span data-i18n="req.in">Check-in</span><b id="reqIn">—</b></div>
+            <div><span data-i18n="req.out">Check-out</span><b id="reqOut">—</b></div>
+            <div><span data-i18n="req.nights">Nights</span><b id="reqNights">—</b></div>
+          </div>
+          <p class="req__hint" id="reqHint" data-i18n="req.hint">Tap your arrival day, then your departure day.</p>
+          <label><span data-i18n="req.name">Name</span><input name="name" required autocomplete="name"></label>
+          <label><span data-i18n="req.email">Email</span><input name="email" type="email" required autocomplete="email"></label>
+          <label><span data-i18n="req.guests">Guests</span><select name="guests" id="reqGuests"></select></label>
+          <label><span data-i18n="req.msg">Message (optional)</span><textarea name="msg" rows="3"></textarea></label>
+          <button class="btn btn--teal btn--full" type="submit"><span data-i18n="req.send">Send booking request</span> <i class="arrow"></i></button>
+          <button class="btn btn--ghost btn--full" type="button" id="reqIg"><span data-i18n="req.ig">Or message us on Instagram</span></button>
+          <p class="req__small" data-i18n="req.small">No payment now. We reply within 24 hours with the price and how to confirm.</p>
+          <p class="req__error" id="reqError" role="alert"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  

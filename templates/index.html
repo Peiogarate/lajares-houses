@@ -1,0 +1,237 @@
+{{head}}
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300A8B5'/%3E%3Cpath d='M14 44 L28 22 L36 34 L42 26 L52 44 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="{{root}}img/hero/hero-01.jpg">
+<link rel="stylesheet" href="{{root}}assets/style.css">
+</head>
+<body class="is-loading">
+
+{{header}}
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__slides" aria-hidden="true">
+      <div class="hero__slide is-active" style="background-image:url({{root}}img/hero/hero-01.jpg)"></div>
+      <div class="hero__slide" data-bg="{{root}}img/hero/hero-02.jpg"></div>
+      <div class="hero__slide" data-bg="{{root}}img/hero/hero-03.jpg"></div>
+      <div class="hero__slide" data-bg="{{root}}img/hero/hero-04.jpg"></div>
+      <div class="hero__slide" data-bg="{{root}}img/hero/hero-05.jpg"></div>
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__content">
+      <h1 class="kicker hero__kicker"><span data-i18n="hero.h1">Holiday villas with heated pool in Lajares, Fuerteventura</span></h1>
+      <p class="hero__title">
+        <span class="line"><span data-i18n="hero.t1">Volcanic calm,</span></span>
+        <span class="line"><em data-i18n="hero.t2">your own heated pool.</em></span>
+      </p>
+      <p class="hero__lead" data-i18n="hero.lead">Two design villas with heated pool in the most authentic village of Fuerteventura, minutes from El Cotillo's beaches and the island's best surf.</p>
+    </div>
+
+    <form class="quick search" id="search" autocomplete="off">
+      <button type="button" class="quick__field search__f" data-open="in">
+        <span data-i18n="req.in">Check-in</span><b id="sIn" data-i18n="search.add">Add date</b>
+      </button>
+      <button type="button" class="quick__field search__f" data-open="out">
+        <span data-i18n="req.out">Check-out</span><b id="sOut" data-i18n="search.add">Add date</b>
+      </button>
+      <label class="quick__field">
+        <span data-i18n="quick.guests">Guests</span>
+        <select name="guests" id="sGuests">
+          <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+        </select>
+      </label>
+      <button class="btn btn--teal" type="submit"><span data-i18n="search.cta">Search</span> <i class="arrow"></i></button>
+      <div class="pop" id="pop" hidden>
+        <div class="pop__top">
+          <button class="cal__nav" type="button" data-step="-1" aria-label="Previous month">‹</button>
+          <p class="pop__hint" id="popHint"></p>
+          <button class="cal__nav" type="button" data-step="1" aria-label="Next month">›</button>
+        </div>
+        <div class="cal__months pop__months" id="popMonths"></div>
+        <div class="pop__foot">
+          <button type="button" class="link" id="popClear" data-i18n="search.clear">Clear dates</button>
+          <button type="button" class="btn btn--dark btn--sm" id="popDone" data-i18n="search.done">Done</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="hero__dots" aria-hidden="true"></div>
+    <a class="hero__scroll" href="{{home}}#intro" aria-label="Scroll"><span></span></a>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro" id="intro">
+    <div class="wrap">
+      <p class="kicker rv" data-i18n="intro.kicker">Book direct with the owners</p>
+      <h2 class="statement rv" data-i18n="intro.statement">Whitewashed walls, black lava stone and palms that sway with the trade winds. <em>Our houses are built for slow days</em>, salty hair and long dinners under the stars.</h2>
+      <p class="intro__seo rv" data-i18n="intro.seo">Lajares Houses are two holiday villas in Lajares, in the north of Fuerteventura: <a href="mali-house.html">Mali House</a>, for 4 guests, and <a href="dudi-house.html">Dudi House</a>, for 6 guests, both with a private heated pool. Book direct with the owners at the best price.</p>
+      <div class="stats">
+        <div class="stat rv"><span class="stat__n" data-count="2">0</span><span class="stat__l" data-i18n="stat.homes">villas in Lajares</span></div>
+        <div class="stat rv"><span class="stat__n" data-count="2">0</span><span class="stat__l" data-i18n="stat.pools">private heated pools</span></div>
+        <div class="stat rv"><span class="stat__n" data-count="10">0</span><span class="stat__l" data-i18n="stat.beach">minutes to El Cotillo beaches</span></div>
+        <div class="stat rv"><span class="stat__n" data-count="365">0</span><span class="stat__l" data-i18n="stat.sun">days of spring-like weather</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Heated pool</span><i>✦</i><span>Surf</span><i>✦</i><span>Volcanoes</span><i>✦</i><span>El Cotillo</span><i>✦</i><span>Slow living</span>
+    </div>
+  </div>
+
+  <!-- HOUSES -->
+  <section class="houses" id="houses">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker rv" data-i18n="houses.kicker">The houses</p>
+        <h2 class="h2 rv" data-i18n="houses.title">Two villas, <em>one way of living</em></h2>
+      </header>
+    </div>
+
+    <article class="house" id="house-mali" data-key="mali">
+      <a class="house__media" href="mali-house.html" data-cursor="view">
+        <div class="house__img house__img--main" data-parallax="0.08"><img src="{{root}}img/mali/mali-01.jpg" alt="Mali House pool and porch" loading="lazy"></div>
+        <div class="house__img house__img--float" data-parallax="-0.12"><img src="{{root}}img/mali/mali-11-sm.jpg" alt="Mali House bedroom" loading="lazy"></div>
+      </a>
+      <div class="house__text">
+        <span class="house__num">01</span>
+        <h3 class="h3 rv"><a href="mali-house.html">Mali House</a></h3>
+        <p class="badge" data-badge hidden></p>
+        <p class="house__tag rv" data-i18n="mali.tag">Minimalist villa · heated pool · barbecue</p>
+        <p class="rv" data-i18n="mali.desc">A bright single-storey villa wrapped around its pool and a volcanic garden of palms and cacti. Living room, kitchen and bedrooms all open to the deck, so the day flows from breakfast to sunset without walls in between.</p>
+        <ul class="specs rv">
+          <li><b>4</b><span data-i18n="spec.guests">guests</span></li>
+          <li><b>2</b><span data-i18n="spec.bedrooms">bedrooms</span></li>
+          <li><b>2</b><span data-i18n="spec.bathrooms">bathrooms</span></li>
+          <li><b>☀</b><span data-i18n="spec.heated">heated pool</span></li>
+        </ul>
+        <ul class="amen rv">
+          <li data-i18n="mali.a1">Porch, barbecue and private solarium</li>
+          <li data-i18n="mali.a2">Fully equipped kitchen and laundry</li>
+          <li data-i18n="mali.a3">Outdoor shower after the beach</li>
+          <li data-i18n="mali.a4">Walk to Lajares' cafés and restaurants</li>
+        </ul>
+        <div class="house__cta rv">
+          <a href="{{home}}#availability" class="btn btn--dark" data-house="mali" data-i18n="cta.dates">Check dates</a>
+          <a href="mali-house.html" class="link" data-i18n="cta.disc_mali">Discover Mali House</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="house house--rev" id="house-dudi" data-key="dudi">
+      <a class="house__media" href="dudi-house.html" data-cursor="view">
+        <div class="house__img house__img--main" data-parallax="0.08"><img src="{{root}}img/dudi/dudi-01.jpg" alt="Dudi House pool and terrace" loading="lazy"></div>
+        <div class="house__img house__img--float" data-parallax="-0.12"><img src="{{root}}img/dudi/dudi-16-sm.jpg" alt="Dudi House courtyard" loading="lazy"></div>
+      </a>
+      <div class="house__text">
+        <span class="house__num">02</span>
+        <h3 class="h3 rv"><a href="dudi-house.html">Dudi House</a></h3>
+        <p class="badge" data-badge hidden></p>
+        <p class="house__tag rv" data-i18n="dudi.tag">Family villa · heated pool · inner courtyard</p>
+        <p class="rv" data-i18n="dudi.desc">Room for everyone: three double bedrooms, a generous open-plan living and dining space and a big terrace that wraps the pool. A lava-stone courtyard gives you shade and quiet when the afternoon sun is high.</p>
+        <ul class="specs rv">
+          <li><b>6</b><span data-i18n="spec.guests">guests</span></li>
+          <li><b>3</b><span data-i18n="spec.bedrooms">bedrooms</span></li>
+          <li><b>2</b><span data-i18n="spec.bathrooms">bathrooms</span></li>
+          <li><b>☀</b><span data-i18n="spec.heated">heated pool</span></li>
+        </ul>
+        <ul class="amen rv">
+          <li data-i18n="dudi.a1">Large terrace with solarium</li>
+          <li data-i18n="dudi.a2">Private inner courtyard</li>
+          <li data-i18n="dudi.a3">Open-plan kitchen, living and dining</li>
+          <li data-i18n="dudi.a4">Outdoor shower and surfboard space</li>
+        </ul>
+        <div class="house__cta rv">
+          <a href="{{home}}#availability" class="btn btn--dark" data-house="dudi" data-i18n="cta.dates">Check dates</a>
+          <a href="dudi-house.html" class="link" data-i18n="cta.disc_dudi">Discover Dudi House</a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+
+  <!-- WHY DIRECT -->
+  <section class="why">
+    <div class="wrap">
+      <header class="sec-head sec-head--center">
+        <p class="kicker kicker--center rv" data-i18n="why.kicker">Why book direct</p>
+        <h2 class="h2 rv" data-i18n="why.title">Better for you, <em>better for us</em></h2>
+      </header>
+      <div class="why__grid">
+        <div class="why__item rv">{{icon:tag}}<h3 data-i18n="why.t1">No platform fees</h3><p data-i18n="why.p1">Booking here you skip the service fees that booking platforms add on top of the price.</p></div>
+        <div class="why__item rv">{{icon:chat}}<h3 data-i18n="why.t2">Talk to the owners</h3><p data-i18n="why.p2">Questions, special requests or late flights: you deal with us directly, not with a call centre.</p></div>
+        <div class="why__item rv">{{icon:calendar}}<h3 data-i18n="why.t3">Real availability</h3><p data-i18n="why.p3">Our calendar syncs with every booking we take, so the free dates you see are really free.</p></div>
+        <div class="why__item rv">{{icon:map}}<h3 data-i18n="why.t4">Local tips</h3><p data-i18n="why.p4">The best beach for the day's wind, where to eat, which surf school: we live the island.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <header class="sec-head sec-head--center">
+        <p class="kicker kicker--center rv" data-i18n="rev.kicker">Guest stories</p>
+        <h2 class="h2 rv" data-i18n="rev.title">What our guests <em>say</em></h2>
+      </header>
+      {{reviews}}
+    </div>
+  </section>
+
+  {{availability}}
+
+  <!-- LAJARES -->
+  <section class="place" id="lajares">
+    <div class="place__img" data-parallax="0.1"><img src="{{root}}img/island/island-01.jpg" alt="Volcano seen from Mali House" loading="lazy"></div>
+    <div class="wrap place__inner">
+      <div class="place__text">
+        <p class="kicker rv" data-i18n="place.kicker">The village</p>
+        <h2 class="h2 rv" data-i18n="place.title">Lajares, the <em>soul of the north</em></h2>
+        <p class="rv" data-i18n="place.p1">Between the Calderón Hondo volcano and the Atlantic, Lajares is where surfers, artists and families come to slow down. Saturday craft market, small cafés, surf schools and dirt tracks to the lava fields, all within walking or cycling distance.</p>
+        <a href="lajares-guide.html" class="btn btn--dark rv guide-btn" data-i18n="place.guide">Read our Lajares guide</a>
+        <ul class="dist rv">
+          <li><b>10 min</b><span data-i18n="dist.cotillo">El Cotillo beaches &amp; lagoons</span></li>
+          <li><b>15 min</b><span data-i18n="dist.corralejo">Corralejo and its dunes</span></li>
+          <li><b>20 min</b><span data-i18n="dist.ferry">Ferry to Lobos &amp; Lanzarote</span></li>
+          <li><b>40 min</b><span data-i18n="dist.airport">Fuerteventura airport</span></li>
+        </ul>
+      </div>
+      <div class="place__cards">
+        <figure class="pc rv"><img src="{{root}}img/island/island-06.jpg" alt="" loading="lazy"><figcaption data-i18n="pc.1">Volcanic gardens</figcaption></figure>
+        <figure class="pc rv"><img src="{{root}}img/island/island-03-sm.jpg" alt="" loading="lazy"><figcaption data-i18n="pc.2">Shells from El Cotillo</figcaption></figure>
+        <figure class="pc rv"><img src="{{root}}img/island/island-02-sm.jpg" alt="" loading="lazy"><figcaption data-i18n="pc.3">Books for lazy afternoons</figcaption></figure>
+      </div>
+    </div>
+    <div class="wrap">
+      {{map:lajares}}
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="wrap wrap--narrow">
+      <header class="sec-head">
+        <p class="kicker rv" data-i18n="faq.kicker">Good to know</p>
+        <h2 class="h2 rv" data-i18n="faq.title">Questions, <em>answered</em></h2>
+      </header>
+      <details class="rv"><summary data-i18n="faq.q1">Why book direct instead of a booking platform?</summary><p data-i18n="faq.a1">You talk straight to the owners, get a personal welcome and avoid platform service fees. The calendar on this page is synced with our bookings, so the dates you see are real.</p></details>
+      <details class="rv"><summary data-i18n="faq.q2">Is the pool really heated all year?</summary><p data-i18n="faq.a2">Yes. Mali House and Dudi House each have a private heated pool, so you can swim comfortably in winter too.</p></details>
+      <details class="rv"><summary data-i18n="faq.q3">Do I need a car?</summary><p data-i18n="faq.a3">In Lajares you can walk to restaurants, cafés and shops. To explore the beaches of El Cotillo, Corralejo and the rest of the island, a car or bike makes it easy.</p></details>
+      <details class="rv"><summary data-i18n="faq.q4">How does the booking request work?</summary><p data-i18n="faq.a4">Pick your dates in the calendar and send the request. We reply within 24 hours with the total price and the steps to confirm. Nothing is charged until you agree.</p></details>
+    </div>
+  </section>
+
+  {{contact}}
+
+  </main>
+
+{{footer}}
+<script src="{{root}}data/availability.js"></script>
+<script src="{{root}}assets/photos.js"></script>
+<script src="{{root}}assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{{head}}
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2300A8B5'/%3E%3Cpath d='M14 44 L28 22 L36 34 L42 26 L52 44 Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="{{root}}{{h_hero}}">
+<link rel="stylesheet" href="{{root}}assets/style.css">
+</head>
+<body class="is-loading page-house" data-house="{{h_key}}">
+
+{{header}}
+<main id="top">
+
+  <section class="phead" id="photos">
+    <div class="wrap">
+      <nav class="crumbs crumbs--dark" aria-label="Breadcrumb"><a href="{{home}}">Lajares Houses</a><span>/</span><span>{{h_name}}</span></nav>
+      <div class="phead__row">
+        <div>
+          <p class="phead__title split">{{h_name}}</p>
+          <h1 class="phead__h1 rv">{{h_h1}}</h1>
+        </div>
+        <div class="phead__btns rv">
+          <a href="#availability" class="btn btn--teal"><span data-i18n="quick.cta">See availability</span> <i class="arrow"></i></a>
+        </div>
+      </div>
+      <div class="collage" data-cursor="view">
+{{h_collage}}
+        <button type="button" class="collage__all" data-tour="0">{{icon:grid}}<span>{{h_allphotos}}</span></button>
+      </div>
+    </div>
+  </section>
+
+  <nav class="subnav" id="subnav" aria-label="Sections">
+    <div class="wrap subnav__inner">
+      <a href="#overview" data-i18n="sub.overview">Overview</a>
+      <a href="#amenities" data-i18n="sub.amenities">Amenities</a>
+      <a href="#photos" data-i18n="sub.photos">Photos</a>
+      <a href="#availability" data-i18n="sub.availability">Availability</a>
+      <a href="#location" data-i18n="sub.location">Location</a>
+      {{h_subrev}}
+      <a href="#info" data-i18n="sub.info">Good to know</a>
+      <a href="#availability" class="subnav__cta btn btn--teal btn--sm" data-i18n="nav.book">Book direct</a>
+    </div>
+  </nav>
+
+  <section class="overview" id="overview">
+    <div class="wrap overview__inner">
+      <div class="overview__text">
+        <p class="kicker rv">{{h_kicker}}</p>
+        <h2 class="h2 rv">{{h_title}}</h2>
+        {{h_paras}}
+        {{h_quote}}
+      </div>
+      <aside class="bookcard rv" id="bookcard">
+        {{h_price}}
+        <ul class="specs specs--col">{{h_specs}}</ul>
+        <div class="bookcard__dates">
+          <div><span data-i18n="req.in">Check-in</span><b data-stay="in">—</b></div>
+          <div><span data-i18n="req.out">Check-out</span><b data-stay="out">—</b></div>
+        </div>
+        <a href="#availability" class="btn btn--teal btn--full"><span data-i18n="card.cta">Check availability</span> <i class="arrow"></i></a>
+        <p class="bookcard__small" data-i18n="card.small">No payment now · reply within 24 h</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="amenities" id="amenities">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker rv" data-i18n="house.amen">What you'll find</p>
+        <h2 class="h2 rv" data-i18n="amen.title">Everything for <em>easy days</em></h2>
+      </header>
+      <ul class="amen-grid">{{h_amen}}</ul>
+    </div>
+  </section>
+
+  {{availability}}
+
+  <section class="location" id="location">
+    <div class="wrap location__inner">
+      <div>
+        <p class="kicker rv" data-i18n="sub.location">Location</p>
+        <h2 class="h2 rv" data-i18n="loc.title">In the heart of <em>Lajares</em></h2>
+        <p class="rv">{{h_loc}}</p>
+        <ul class="dist rv">
+          <li><b>10 min</b><span data-i18n="dist.cotillo">El Cotillo beaches &amp; lagoons</span></li>
+          <li><b>15 min</b><span data-i18n="dist.corralejo">Corralejo and its dunes</span></li>
+          <li><b>20 min</b><span data-i18n="dist.ferry">Ferry to Lobos &amp; Lanzarote</span></li>
+          <li><b>40 min</b><span data-i18n="dist.airport">Fuerteventura airport</span></li>
+        </ul>
+        <a href="lajares-guide.html" class="link rv" data-i18n="place.guide">Read our Lajares guide</a>
+      </div>
+      {{h_map}}
+    </div>
+  </section>
+
+  {{h_reviews}}
+
+  <section class="info" id="info">
+    <div class="wrap wrap--narrow">
+      <header class="sec-head">
+        <p class="kicker rv" data-i18n="sub.info">Good to know</p>
+        <h2 class="h2 rv" data-i18n="info.title">Before you <em>arrive</em></h2>
+      </header>
+      <dl class="info__list rv">{{h_info}}</dl>
+    </div>
+  </section>
+
+  <section class="others">
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="kicker rv" data-i18n="others.kicker">Also in Lajares</p>
+        <h2 class="h2 rv" data-i18n="others.title">Our other <em>houses</em></h2>
+      </header>
+      <div class="others__grid">
+{{h_others}}
+      </div>
+    </div>
+  </section>
+
+  {{contact}}
+</main>
+
+<div class="tour" id="tour" aria-hidden="true" role="dialog" aria-label="Photo tour">
+  <div class="tour__bar">
+    <button type="button" class="tour__close" aria-label="Close">{{icon:back}}</button>
+    <p class="tour__title">{{h_name}} · <span>{{h_count}}</span></p>
+    <a href="#availability" class="btn btn--teal btn--sm tour__book" data-i18n="nav.book">Book direct</a>
+  </div>
+  <div class="tour__grid" id="grid" data-static>
+{{h_gallery}}
+  </div>
+</div>
+
+{{footer}}
+<script src="{{root}}data/availability.js"></script>
+<script src="{{root}}assets/app.js"></script>
+</body>
+</html>
