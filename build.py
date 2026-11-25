@@ -151,8 +151,8 @@ ES.update(ES_EXTRA)
 ES.update({
     'nav.shop': 'Tienda', 'foot.shop': 'Tee Club',
     'shop.kicker': 'Lajares Houses · Drop 01', 'shop.t1': 'El Lajares',
-    'shop.lead': 'Estamos imprimiendo nuestra primera colección. Diez diseños del norte de Fuerteventura: surf, volcanes y la cabra majorera. Todavía no hay precios. Dinos cuál te gusta y te guardamos una en tu talla.',
-    'shop.soon': 'Muy pronto', 'shop.coll_k': 'La colección', 'shop.coll_t': 'Diez camisetas, <em>una isla.</em>',
+    'shop.lead': 'Estamos imprimiendo nuestra primera colección. Doce diseños del norte de Fuerteventura: surf, volcanes y la cabra majorera. Todavía no hay precios. Dinos cuál te gusta y te guardamos una en tu talla.',
+    'shop.soon': 'Muy pronto', 'shop.coll_k': 'La colección', 'shop.coll_t': 'Doce camisetas, <em>una isla.</em>',
     'shop.how_k': 'Cómo funciona', 'shop.how_t': 'Sin carrito. <em>Solo pregunta.</em>',
     'shop.s1t': 'Elige tu favorita', 'shop.s1': 'Pasa el ratón por una camiseta para ver la parte de delante, y tócala para ver más.',
     'shop.s2t': 'Escríbenos', 'shop.s2': 'Dinos el diseño y tu talla por email o por mensaje en Instagram.',
@@ -164,9 +164,9 @@ ES.update({
 })
 SHOP = {
   "en": {"title": "Lajares Tee Club · Surf T-shirts from Lajares, Fuerteventura · Lajares Houses",
-         "desc": "The first Lajares Houses T-shirt collection: ten surf designs from Lajares and the north shore of Fuerteventura. Coming soon, ask us about yours."},
+         "desc": "The first Lajares Houses T-shirt collection: twelve surf designs from Lajares and the north shore of Fuerteventura. Coming soon, ask us about yours."},
   "es": {"title": "Lajares Tee Club · Camisetas de surf de Lajares, Fuerteventura · Lajares Houses",
-         "desc": "La primera colección de camisetas de Lajares Houses: diez diseños surferos de Lajares y el norte de Fuerteventura. Muy pronto, pregúntanos por la tuya."},
+         "desc": "La primera colección de camisetas de Lajares Houses: doce diseños surferos de Lajares y el norte de Fuerteventura. Muy pronto, pregúntanos por la tuya."},
 }
 
 def url(lang, page):

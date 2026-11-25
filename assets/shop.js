@@ -35,7 +35,11 @@
     ['07', 'North Shore Polaroid', 'white', 'One instant photo of the north shore.', 'Una foto instantánea del norte de la isla.'],
     ['08', 'Lajares ×5', 'black', 'Type only. The classic.', 'Solo letras. La clásica.'],
     ['09', 'Lajares ×5 · Photo Row', 'black', 'The middle row is a window onto the waves.', 'La fila del centro es una ventana a las olas.'],
-    ['10', 'Majorero', 'black', 'The island goat and two crossed boards.', 'La cabra de la isla y dos tablas cruzadas.']
+    ['10', 'Majorero', 'black', 'The island goat and two crossed boards.', 'La cabra de la isla y dos tablas cruzadas.'],
+    ['11', 'El Cotillo', 'cream', 'The cliffs of El Cotillo at sunset, in a classic surf-shop frame.', 'Los acantilados de El Cotillo al atardecer, en un marco clásico de surf-shop.',
+     'Small El Cotillo + Lajares print', 'El Cotillo y Lajares, en pequeño'],
+    ['12', 'North Shore', 'cream', 'A north shore wave with Lanzarote on the horizon, framed.', 'Una ola del North Shore con Lanzarote al fondo, enmarcada.',
+     'Small North Shore + Lajares print', 'North Shore y Lajares, en pequeño']
   ];
   const img = (n, s) => `${root}img/shop/tee-${n}-${s}.jpg`;
   const grid = $('teeGrid');
@@ -243,7 +247,8 @@
   };
   let last = null;
   const open = (n) => {
-    const [num, name, c, en, esd] = TEES.find((t) => t[0] === n);
+    const [num, name, c, en, esd, fEn, fEs] = TEES.find((t) => t[0] === n);
+    $('mFrontV').textContent = (es ? fEs : fEn) || T.frontVal;
     $('mBack').src = img(num, 'back'); $('mFront').src = img(num, 'front');
     $('mBack').alt = `${name}, ${T.back.toLowerCase()}`; $('mFront').alt = `${name}, ${T.front.toLowerCase()}`;
     $('mNum').textContent = `${T.design} ${num}`; $('mName').textContent = name;
