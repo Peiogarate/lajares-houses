@@ -3,8 +3,9 @@
   --ink:#1F1D1B; --stone:#6E665D; --line:rgba(31,29,27,.12);
   --teal:#00A8B5; --teal-d:#00838D; --teal-soft:#D8F1F3;
   --lava:#25221F; --clay:#C46A4C;
-  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
-  --sans:"Jost", "Gill Sans", "Gill Sans Nova", system-ui, sans-serif;
+  --serif:"Young Serif", Georgia, "Times New Roman", serif;
+  --sans:"Work Sans", system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, monospace;
   --ease:cubic-bezier(.2,.7,.1,1);
   --gut:clamp(16px, 4vw, 56px);
 }
@@ -657,3 +658,10 @@ a.house__media{display:block}
 .map__tabs button{border:0;background:none;padding:10px 16px;border-radius:40px;cursor:pointer;font:500 12px/1 var(--sans);letter-spacing:.08em;transition:background .3s,color .3s}
 .map__tabs button.is-active{background:var(--ink);color:#fff}
 .map--lazy.is-loaded{position:relative}
+
+/* ---- Typography: Young Serif (titles) + Work Sans (text) + DM Mono (labels) ---- */
+body{font-weight:400}
+:is(.hero__title,.h2,.h3,.statement,.contact__title,.stat__n,.loader__word,.menu a,.nav__logo-main,.req__house,.month__name,.specs b,.dist b,summary,.foot__logo,.marquee__track){font-weight:400!important;letter-spacing:-.01em}
+:is(.hero__title,.h2,.h3,.statement,.contact__title,.stat__n,.loader__word,.menu a,.nav__logo-main,.req__house,.month__name,.specs b,.dist b,summary,.foot__logo,.marquee__track) em,.marquee__track{font-style:normal!important;color:var(--teal-d)}
+.hero__title em{color:#F4C542!important}
+:is(.kicker,.btn,.link,.nav__links a,.house__tag,.house__num,.crumbs,.side__h,.contact__grid span,.lang,.loader__sub,.nav__logo-sub,.quick__field span,.month__dow,.req label span,.req__dates span){font-family:var(--mono)!important;letter-spacing:.08em}
