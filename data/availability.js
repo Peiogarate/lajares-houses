@@ -1,6 +1,6 @@
 // Generado por sync_calendar.py - no editar a mano
 window.AVAILABILITY = {
- "updated": "2026-11-28T08:00+00:00",
+ "updated": "2026-11-28T17:38+00:00",
  "houses": {
   "mali": [
    [
